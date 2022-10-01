@@ -22,7 +22,6 @@ int main()
     {
         string y="";
         y+=x.substr(0,3);
-        // y+='-';
         for (int i = 3; i < n; i++)
         {
             if((i-1)%2==0)
