@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    queue<pair<int,int>>q;
+    for (int i = 0; i < n; i++)
+    {
+        int k;
+        cin>>k;
+        q.push(make_pair(k,i+1));
+    }
+    int t = 0;
+    while (!q.empty())
+    {
+        if(q.front().first<=m)
+        {
+            t=q.front().second;
+            q.pop();
+        }
+        else
+        {
+            auto j = q.front();
+            j.first-=m;
+            q.pop();
+            q.push(j);
+        }
+    }
+    cout<<t;
+    
+    return 0;
+}
